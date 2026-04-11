@@ -4,6 +4,7 @@ import Banner from './components/Banner'
 import Hero from './components/hero'
 import About from './components/About'
 import './App.css'
+import Join from './components/join'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
               <Banner />
               <Hero />
               <About />
+              <Join />
             </>
           } />
         </Routes>

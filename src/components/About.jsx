@@ -38,7 +38,7 @@ const About = () => {
 
 
   return (
-    <div className="grid grid-cols-2 bg-[#FFFFFF] w-full h-screen justify-center">
+    <div className="grid grid-cols-2 bg-[#FFFFFF] w-full h-screen justify-center mb-20">
       <div className=" mr-auto sm:px-6 lg:pl-8 pt-10 h-full">
         <h1 className="text-left font-manrope font-semibold text-[#333333] text-[10px] mb-4">ABOUT US</h1></div>
       <div className=" mx-auto sm:px-6 lg:pr-8 pt-10 h-full">
