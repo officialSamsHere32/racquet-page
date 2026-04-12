@@ -1,69 +1,89 @@
-import { useEffect, useRef, useState } from 'react';
-import Img1 from '../assets/BannerBackground.png';
-import Img2 from '../assets/Img2.png';
-import Img3 from '../assets/Img3.png';
-
-
+import { useEffect, useRef, useState } from "react";
+import { cardRContent } from "../assets";
+import Img1 from "../assets/BannerBackground.png";
+import Img2 from "../assets/Img2.png";
+import Img3 from "../assets/Img3.png";
 
 const About = () => {
-  const ref = useRef(null);
-  const cards = [
-    { src: Img1, alt: 'Networking through sport', text: 'Networking through sport' },
-    { src: Img2, alt: 'Inter-company leagues', text: 'Inter-company leagues' },
-    { src: Img3, alt: 'Competitive tournaments', text: 'Competitive tournaments' },
-  ];
-  const [isVisible, setIsVisible] = useState(false);
-  
-  useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.disconnect(); // hanya sekali load
-          }
-        },
-        {
-          threshold: 0.1,
-        }
-      );
-  
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-  
-      return () => {
-        if (ref.current) observer.unobserve(ref.current);
-      };
-    }, []);
-
+  const [data] = useState(cardRContent);
 
   return (
-    <div className="grid grid-cols-2 bg-[#FFFFFF] w-full h-screen justify-center mb-20">
-      <div className=" mr-auto sm:px-6 lg:pl-8 pt-10 h-full">
-        <h1 className="text-left font-manrope font-semibold text-[#333333] text-[10px] mb-4">ABOUT US</h1></div>
-      <div className=" mx-auto sm:px-6 lg:pr-8 pt-10 h-full">
-        <h1 className="text-left font-manrope font-semibold text-[#333333] text-[30px]">What is Racquet Connect?</h1>
-        <p className="text-left font-manrope text-[#333333] text-[16px] mt-4 max-w-lg">A new way to build team spirit, challenge your competitors, and boost workplace morale while enjoying the fastest-growing sport in Europe.</p>
-        <p className="text-left font-manrope text-[#333333] text-[16px] mt-4 max-w-lg">Our league is open to all businesses in Jakarta, from startups to corporate giants.</p>
-      </div>
-      <div ref={ref} className="col-span-2 flex flex-row flex-wrap gap-10 items-center justify-center sm:px-6 lg:pl-8 pt-10 h-full">
-        {cards.map((card, index) => (
-          <div key={index} className="relative w-[350px] h-[250px] overflow-hidden rounded-2xl shadow-sm">
-            <img
-              src={card.src}
-              alt={card.alt}
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/30 hover:bg-black/50 transition-colors duration-300" />
-            <p className="absolute inset-x-4 bottom-4 text-left font-manrope text-white text-[16px] leading-6">
-              {card.text}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-    
-  );
-}
+    <>
+      <section
+        id="about"
+        className="bg-white w-full mx-auto py-16 relative z-10"
+      >
+        <div
+          className="mx-auto px-6 sm:px-18 md:px-20"
+          style={{ maxWidth: "1860px", width: "100%" }}
+        >
+          {/* Safari-compatible grid structure */}
+          <div className="safari-grid">
+            {/* Left column - ABOUT US */}
+            <div className="safari-col-left">
+              <div className="mt-12 flex items-start">
+                <div className="text-black font-manrope text-sm tracking-wider whitespace-nowrap bg-act  rounded-full px-3 py-1">
+                  ABOUT US
+                </div>
+              </div>
+            </div>
 
-export default About
+            {/* Right column - Main content */}
+            <div className="safari-col-right">
+              <div className="safari-content">
+                <div className="text-left mb-8 w-full">
+                  {/* <div className=""> */}
+                  <h2 className="font-manrope  font-medium md:text-[42px] text-4xl  text-black mb-6">
+                    What is Racquet Connect?
+                  </h2>
+                  {/* max-w-full */}
+                  {/* max-w-full overflow-hidden break-words */}
+                  <p className="font-manrope font-medium text-base sm:text-lg md:text-xl  lg:text-[21px] text-gray-600 mb-4  tracking-tight leading-7  ">
+                    {/* <div></div> */}A new way to build team spirit, challenge
+                    your competitors, and boost workplace morale while enjoying
+                    the fastest-growing sport in Europe.
+                  </p>
+                  <p className="font-manrope font-medium text-base sm:text-lg md:text-xl lg:text-[21px] text-gray-600 mb-10 tracking-tight leading-7">
+                    Our league is open to all businesses in Jakarta, from
+                    startups to corporate giants.
+                  </p>
+                  {/* </div> */}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Card grid with Safari compatibility */}
+          <div className="safari-cards">
+            {data.map((card) => (
+              <div key={card.id}>
+                <div className="safari-card rounded-lg overflow-hidden h-[360px] relative group">
+                  <div className="absolute inset-0 w-full h-full">
+                    <img
+                      src={card.image}
+                      alt=""
+                      className={`w-full h-full object-cover ${
+                        card.objectPosition || ""
+                      } transition-transform duration-300 group-hover:scale-110`}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-black opacity-20 group-hover:opacity-50 transition-opacity duration-300"></div>
+                  <div className="absolute inset-x-0 bottom-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 ease-in-out pointer-events-none">
+                    <h3 className="text-2xl font-manrope mb-2">{card.nama}</h3>
+                    <p className="text-sm font-manrope opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                      {card.textTransform}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      ;
+    </>
+  );
+};
+
+export default About;

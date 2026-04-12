@@ -3,3 +3,160 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Safari-specific grid system */
+.safari-grid {
+  display: grid;
+  /* grid-template-columns: 1fr; */
+  grid-template-columns: minmax(100px, auto) 1fr;
+  gap: 0;
+}
+
+.safari-col-left {
+  grid-column: 1;
+}
+
+.safari-col-right {
+  grid-column: 1;
+  /* width: 23rem; */
+  width: 100%;
+
+  padding: 2rem;
+  padding-left: 0;
+}
+
+.safari-content {
+  max-width: 42rem;
+  margin-left: 0;
+  /* text-align: left; */
+}
+
+.safari-cards {
+  display: grid;
+  grid-template-columns: 3fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.safari-card {
+  width: 100%;
+}
+
+/* Background color for the ABOUT US badge */
+.bg-act {
+  background-color: #f3f4f6;
+}
+
+/* Safari-specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* Fix height issues in Safari */
+  .h-\[280px\] {
+    height: 280px;
+  }
+
+  /* Fix transform issues in Safari */
+  .transform {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  /* Fix font rendering in Safari */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Media queries for responsive layout */
+@media (min-width: 1073px) {
+  .safari-grid {
+    grid-template-columns: 110px 1fr;
+  }
+
+  .safari-col-left {
+    grid-column: 1;
+  }
+
+  .safari-col-right {
+    grid-column: 2;
+    /* margin: auto; */
+
+    padding-left: 3rem;
+  }
+
+  .safari-content {
+    max-width: 42rem;
+    margin-left: calc((100% - 42rem) / 2);
+  }
+
+  .safari-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1280px) {
+  .safari-grid {
+    grid-template-columns: 310px 1fr;
+  }
+}
+
+@media (max-width: 926px) {
+  .safari-col-right {
+    /* grid-column: 2; */
+    width: 23rem;
+
+    /* padding-left: 3rem; */
+  }
+}
+
+@media (max-width: 1280px) {
+  .safari-grid {
+    grid-template-columns: 310px 1fr;
+  }
+}
+
+/* Media query untuk Safari di MacBook */
+@media screen and (max-width: 1280px) {
+  .safari-line {
+    right: calc(50% - 250px) !important;
+    top: 60rem !important;
+    transform: translateX(0%) !important;
+  }
+}
+
+/* Khusus untuk Safari browser */
+@supports (-webkit-appearance: none) and (not (appearance: none)) {
+  .safari-line {
+    right: calc(50% - 280px) !important;
+    top: 62rem !important;
+    transform: translateX(5%) !important;
+  }
+}
+
+/* Safari di MacBook spesifik */
+@media screen and (max-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
+  .safari-line {
+    right: calc(50% - 300px) !important;
+    top: 50rem !important;
+    transform: translateX(13%) !important;
+  }
+}
+
+@layer utilities {
+  .container-h-custom-rc {
+    @apply mx-auto px-6 max-w-screen-2xl min-h-[773px];
+  }
+}
