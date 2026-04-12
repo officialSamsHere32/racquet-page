@@ -6,6 +6,7 @@ import About from './components/About'
 import './App.css'
 import Testimoni from './components/Testimonial'
 import Join from './components/join'
+import Questions from './components/Questions'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +22,7 @@ function App() {
               <About />
               <Join />
               <Testimoni />
+              <Questions />
             </>
           } />
         </Routes>

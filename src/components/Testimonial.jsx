@@ -9,7 +9,7 @@ function Testimoni() {
             <h1 className="text-[11px] font-manrope text-[#333333] font-normal text-center">TESTIMONIAL</h1>
             <h2 className="text-[31px] font-manrope font-medium text-[#333333] text-center">What our players say</h2>
         </div>
-        <div className="w-full">
+        <div className="w-full mb-20">
             <div className="flex items-center justify-center gap-10">
                 <div className="bg-[#0D2420] rounded-2xl items-center">
                     <img src={Img1} alt="Player 1" className="rounded-2xl w-[350px] h-[250px] object-cover mx-auto" />
@@ -18,7 +18,7 @@ function Testimoni() {
                 </div>
                 <div className='sm:mt-32'>
                     <div className="bg-[#0D2420] rounded-2xl items-center">
-                        <img src={Img2} alt="Player 1" className="rounded-2xl w-[350px] h-[250px] object-cover mx-auto" />
+                        <img src={Img2} alt="Player 1" className="rounded-2xl w-[350px] h-[250px] object-cover mx-auto mb-7" />
                         <p className="text-[17px] font-manrope text-[#FFFFFF] pl-5 text-left mt-4">“It's the most fun and natural <br /> networking I've ever experienced”</p>
                         <h3 className="text-[12px] font-manrope font-semibold pl-5 pt-6 pb-5 text-[#9FA8A6] text-left mt-2">Luke Brad</h3>
                     </div>
