@@ -15,7 +15,7 @@ function Navbar() {
     return (
         <>
             <div className="flex items-center fixed top-0 right-0 w-full p-4 z-10">
-                <img src={Logo} alt="Logo" className="h-6 ml-4 mr-40" />
+                <img src={Logo} alt="Logo" className="h-6 ml-4 mr-40 bg-slate-500 rounded-md" />
                 <div className="w-[50%] h-10 bg-[#ffffffb2] flex items-center justify-between px-10 rounded-full ml-auto">
                     <div className="flex space-x-12 items-center">
                         {navItems.map((item, index) => (

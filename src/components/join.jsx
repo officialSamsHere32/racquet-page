@@ -32,7 +32,7 @@ function Join() {
             </div> 
             <div className="relative -top-[350px] mx-auto sm:px-6 lg:pr-8 h-full">
                 <img src={Img2} alt="Logo" className="relative z-10 rounded-lg h-[400px] w-[395px] object-cover"/>
-                <img src={vector2} alt="Connector line" className="absolute right-[-300px] top-[180px] h-auto z-0 pointer-events-none" />
+                <img src={vector2} alt="Connector line" className="absolute right-[-350px] top-[180px] h-auto z-0 pointer-events-none" />
                 <div className="flex mt-5 relative z-10">
                     <h1 className='text-[20px] mt-2 mr-3 font-normal border border-spacing-10 h-[31px] border-[#E1FFA0] rounded-full w-[31px] text-[#E1FFA0] text-center'>2</h1>
                     <div>
@@ -44,7 +44,7 @@ function Join() {
                 </div>
             </div>
             <div className='mx-auto mt-36 sm:px-6 lg:pr-8 h-full'>
-                <img src={Img3} alt="Logo" className="rounded-lg z-10 relative h-[400px] w-[395px] object-cover"/>
+                <img src={Img3} alt="Logo" className="rounded-lg z-0 relative h-[400px] w-[395px] object-cover"/>
                 <div className="flex mt-5">
                     <h1 className='text-[20px] z-10 mt-2 mr-3 font-normal border border-spacing-10 h-[31px] border-[#E1FFA0] rounded-full w-[31px] text-[#E1FFA0] text-center'>3</h1>
                     <div>

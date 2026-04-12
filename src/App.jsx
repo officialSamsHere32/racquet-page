@@ -4,6 +4,7 @@ import Banner from './components/Banner'
 import Hero from './components/hero'
 import About from './components/About'
 import './App.css'
+import Testimoni from './components/Testimonial'
 import Join from './components/join'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
               <Hero />
               <About />
               <Join />
+              <Testimoni />
             </>
           } />
         </Routes>
