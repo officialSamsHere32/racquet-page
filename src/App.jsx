@@ -7,6 +7,8 @@ import './App.css'
 import Testimoni from './components/Testimonial'
 import Join from './components/join'
 import Questions from './components/Questions'
+import Footer from './components/Footer'
+import Footer2 from './components/Footer2'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +25,8 @@ function App() {
               <Join />
               <Testimoni />
               <Questions />
+              <Footer />
+              <Footer2 />
             </>
           } />
         </Routes>
