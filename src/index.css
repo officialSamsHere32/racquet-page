@@ -5,13 +5,6 @@
 @tailwind utilities;
 
 
-
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500..800&display=swap");
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,8 +13,7 @@ body {
 /* Safari-specific grid system */
 .safari-grid {
   display: grid;
-  /* grid-template-columns: 1fr; */
-  grid-template-columns: minmax(100px, auto) 1fr;
+  grid-template-columns: 1fr;
   gap: 0;
 }
 
@@ -31,11 +23,8 @@ body {
 
 .safari-col-right {
   grid-column: 1;
-  /* width: 23rem; */
   width: 100%;
-
-  padding: 2rem;
-  padding-left: 0;
+  padding: 1rem 0 0;
 }
 
 .safari-content {

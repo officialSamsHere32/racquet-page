@@ -1,41 +1,34 @@
+function Questions() {
+    const faqs = [
+        "What is Racquet Connect?",
+        "Who can join the tournaments and leagues?",
+        "How do I register for a tournament?",
+        "How is networking facilitated during events?",
+        "What do winners receive?",
+    ];
 
-
-function Questions () {
     return (
-        <div className="w-full h-[800px] bg-[#F5F5F5] mt-20 rounded-lg flex flex-col items-center justify-center">
-            <h1 className="text-[40px] font-light text-left w-[600px] font-manrope text-[#333333]">Frequently asked question</h1>
-            <div className="flex items-start mt-5 border border-[#D4D4D4] w-[750px] border-x-0 py-3">
-                <h2 className="text-[20px] font-light text-left w-[600px] font-manrope text-[#333333]">What is Racquet Connect?</h2>
-                <div className="items-center">
-                    <button className="text-[25px] font-bold text-right h-[30px] w-[300px] font-manrope text-[#333333]">+</button>
+        <section className="bg-[#F5F5F5] px-4 py-16 sm:px-6 lg:px-10">
+            <div className="mx-auto max-w-6xl rounded-3xl bg-white p-8 shadow-lg shadow-slate-200 sm:p-10">
+                <h1 className="text-3xl font-light text-[#333333] sm:text-4xl">
+                    Frequently asked question
+                </h1>
+
+                <div className="mt-8 grid gap-4">
+                    {faqs.map((question, index) => (
+                        <div key={index} className="flex flex-col gap-4 rounded-3xl border border-[#D4D4D4] bg-[#F9F9F9] px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+                            <h2 className="text-base font-light text-[#333333] sm:text-lg">
+                                {question}
+                            </h2>
+                            <button className="h-10 w-10 rounded-full bg-[#174038] text-[22px] font-bold text-[#E1FFA0] transition hover:bg-slate-900">
+                                +
+                            </button>
+                        </div>
+                    ))}
                 </div>
             </div>
-            <div className="flex items-start border border-[#D4D4D4] w-[750px] border-x-0 py-3">
-                <h2 className="text-[20px] font-light text-left w-[600px] font-manrope text-[#333333]">Who can join the tournaments and leagues?</h2>
-                <div className="items-center">
-                    <button className="text-[25px] font-bold text-right h-[30px] w-[300px] font-manrope text-[#333333]">+</button>
-                </div>
-            </div>
-            <div className="flex items-start border border-[#D4D4D4] w-[750px] border-x-0 py-3">
-                <h2 className="text-[20px] font-light text-left w-[600px] font-manrope text-[#333333]">How do I register for a tournament?</h2>
-                <div className="items-center">
-                    <button className="text-[25px] font-bold text-right h-[30px] w-[300px] font-manrope text-[#333333]">+</button>
-                </div>
-            </div>
-            <div className="flex items-start border border-[#D4D4D4] w-[750px] border-x-0 py-3">
-                <h2 className="text-[20px] font-light text-left w-[600px] font-manrope text-[#333333]">How is networking facilitated during events?</h2>
-                <div className="items-center">
-                    <button className="text-[25px] font-bold text-right h-[30px] w-[300px] font-manrope text-[#333333]">+</button>
-                </div>
-            </div>
-            <div className="flex items-start border border-[#D4D4D4] w-[750px] border-x-0 py-3">
-                <h2 className="text-[20px] font-light text-left w-[600px] font-manrope text-[#333333]">What do winners receive?</h2>
-                <div className="items-center">
-                    <button className="text-[25px] font-bold text-right h-[30px] w-[300px] font-manrope text-[#333333]">+</button>
-                </div>
-            </div>
-        </div>
-    )
+        </section>
+    );
 }
 
 export default Questions;

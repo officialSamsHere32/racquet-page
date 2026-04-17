@@ -1,40 +1,29 @@
 import { Logo, Logo2, Logo3, Logo4, Logo5 } from "../assets";
 
-
-import Marquee from "react-fast-marquee";
-
 const Hero = () => {
   const logos = [Logo, Logo2, Logo3, Logo4, Logo5];
 
   return (
-    <>
-      <div className="bg-[#0D2420] w-full h-[260px]">
-        <h1 className="text-center text-[#FFFFFF] font-manrope font-semibold text-[24px] pt-10">
+    <section className="bg-[#0D2420] w-full py-10 sm:py-14">
+      <div className="mx-auto flex max-w-6xl flex-col items-center px-4 sm:px-6">
+        <h1 className="text-center text-[#FFFFFF] font-manrope font-semibold text-[24px]">
           As featured in
         </h1>
 
-        {/* PERHATIKAN PENGGUNAAN METHOD MAP */}
-        <div className="w-full max-w-full overflow-hidden relative">
-          {/* <Marquee */}
-            // speed={40}
-            // gradientWidth={0}
-            // pauseOnHover={true}
-            // className="py-2"
-          {/* > */}
-            <div className="flex space-x-20 mt-8 w-full">
-              {logos.map((logo, index) => (
-                <img
-                  key={index}
-                  src={logo}
-                  alt="Logo"
-                  className="h-12 w-full"
-                />
-              ))}
-            </div>
-          {/* </Marquee> */}
+        <div className="mt-8 w-full overflow-hidden">
+          <div className="flex flex-wrap justify-center gap-8 sm:gap-12">
+            {logos.map((logo, index) => (
+              <img
+                key={index}
+                src={logo}
+                alt="Logo"
+                className="h-12 w-auto max-w-[120px] object-contain"
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
