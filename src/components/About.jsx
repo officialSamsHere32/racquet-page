@@ -14,8 +14,7 @@ const About = () => {
         className="bg-white w-full mx-auto py-16 relative z-0"
       >
         <div
-          className="mx-auto px-6 sm:px-18 md:px-20"
-          style={{ maxWidth: "1860px", width: "100%" }}
+          className="mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl"
         >
           {/* Safari-compatible grid structure */}
           <div className="safari-grid">

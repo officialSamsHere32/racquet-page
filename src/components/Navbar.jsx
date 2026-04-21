@@ -11,20 +11,20 @@ function Navbar() {
     ];
 
     return (
-        <header className="fixed top-0 left-0 z-20 w-full bg-white/80 backdrop-blur-sm shadow-sm">
+        <header className="fixed top-0 left-0 right-0 z-20 w-full bg-white/80 backdrop-blur-sm shadow-sm">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
                 <img src={Logo} alt="Logo" className="h-8 w-auto rounded-md bg-slate-500" />
 
                 <button
                     type="button"
-                    className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white p-2 text-slate-700 hover:bg-slate-50 sm:hidden"
+                    className="inline-flex items-center justify-between rounded-full border border-slate-300 bg-white p-2 text-slate-700 hover:bg-slate-50 sm:hidden"
                     onClick={() => setIsOpen((prev) => !prev)}
                     aria-label="Toggle menu"
                 >
                     <span className="text-xl font-bold">{isOpen ? "×" : "☰"}</span>
                 </button>
 
-                <nav className="hidden flex-1 items-center justify-between space-x-6 sm:flex">
+                <nav className="hidden flex-1 items-center justify-end space-x-6 sm:flex">
                     <div className="flex flex-wrap items-center gap-4">
                         {navItems.map((item, index) => (
                             <a

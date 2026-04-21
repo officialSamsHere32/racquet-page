@@ -3,67 +3,60 @@ import Img2 from '../assets/Img2.png';
 import Img3 from '../assets/Img4.png';
 import vector from '../assets/Vector8.png';
 import vector2 from '../assets/Vector7.png';
+import { useEffect, useRef, useState } from 'react';
+
 
 function Join() {
-    const steps = [
-        {
-            id: 1,
-            title: 'Register your company',
-            description: 'Build meaningful professional relationships while enjoying competitive padel matches.',
-            image: Img1,
-        },
-        {
-            id: 2,
-            title: 'Form your team',
-            description: 'Gather your colleagues to compete in a fun and structured league experience.',
-            image: Img2,
-        },
-        {
-            id: 3,
-            title: 'Join a league',
-            description: 'Connect with other businesses and elevate your network through sport.',
-            image: Img3,
-        },
-    ];
-
     return (
-        <section className="bg-[#174038] px-4 py-16 sm:px-6 lg:px-10">
-            <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-start">
-                <div className="space-y-6">
-                    <p className="text-[11px] font-manrope uppercase tracking-[0.24em] text-[#9FA8A6]">
-                        How to join?
-                    </p>
-                    <h2 className="text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
-                        You’re only 3 steps away from expanding your network
-                    </h2>
-                    <img src={vector} alt="Vector accent" className="hidden sm:block w-44 opacity-70" />
+        <div className="grid grid-rows-2 grid-cols-2 bg-[#174038] justify-center h-full">
+            <div className="mr-auto mt-5 sm:px-6 lg:pl-8 pt-10 h-full">
+                <h1 className="text-[11px] font-manrope text-[#9FA8A6] font-medium text-left">HOW TO JOIN?</h1>
+                <h2 className="text-[40px] font-semibold text-[#FFFFFF]">You’re only 3 steps away<br/>
+                    from expanding<br /> 
+                    your network
+                </h2>
+                <img src={vector} className='ml-[200px] z-0'></img>
+            </div>
+            <div className="mx-auto mt-5 sm:px-6 lg:pr-8 pt-10 h-full">
+                <img src={Img1} alt="Logo" className="rounded-lg h-[400px] w-[395px] object-cover"/>
+                <div className="flex mt-5">
+                    <h1 className='text-[20px] z-10 mt-2 mr-3 font-normal border border-spacing-10 h-[31px] border-[#E1FFA0] rounded-full w-[31px] text-[#E1FFA0] text-center'>1</h1>
+                    <div>
+                        <h1 className='text-[30px] font-normal text-[#E1FFA0] text-left'>Register your company</h1>
+                        <p className='text-[16px] font-manrope text-left font-normal text-[#FFFFFF] mt-2'>Build meaningful professional relationships 
+                            <br/>while enjoying competitive padel matches.
+                        </p>
+                        {/* <img src={vector2} className='mr-[200px] mt-5 z-0'></img>  */}
+                    </div>
                 </div>
-
-                <div className="space-y-8">
-                    {steps.map((step) => (
-                        <div key={step.id} className="rounded-[32px] border border-[#E1FFA0]/20 bg-white/5 p-6 shadow-lg shadow-black/10 sm:p-8">
-                            <img src={step.image} alt={step.title} className="mb-6 h-auto w-full rounded-3xl object-cover" />
-
-                            <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-                                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#E1FFA0] text-lg font-semibold text-[#E1FFA0]">
-                                    {step.id}
-                                </span>
-
-                                <div>
-                                    <h3 className="text-2xl font-semibold text-[#E1FFA0]">
-                                        {step.title}
-                                    </h3>
-                                    <p className="mt-3 text-base leading-7 text-[#F3F7F1]">
-                                        {step.description}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                    <img src={vector2} alt="Connector line" className="mx-auto hidden w-36 opacity-60 sm:block" />
+            </div> 
+            <div className="relative -top-[350px] mx-auto sm:px-6 lg:pr-8 h-full">
+                <img src={Img2} alt="Logo" className="relative z-10 rounded-lg h-[400px] w-[395px] object-cover"/>
+                <img src={vector2} alt="Connector line" className="absolute right-[-350px] top-[180px] h-auto z-0 pointer-events-none" />
+                <div className="flex mt-5 relative z-10">
+                    <h1 className='text-[20px] mt-2 mr-3 font-normal border border-spacing-10 h-[31px] border-[#E1FFA0] rounded-full w-[31px] text-[#E1FFA0] text-center'>2</h1>
+                    <div>
+                        <h1 className='text-[30px] font-normal text-[#E1FFA0] text-left'>Form your team</h1>
+                        <p className='text-[16px] font-manrope text-left font-normal text-[#FFFFFF] mt-2'>Build meaningful professional relationships 
+                            <br/>while enjoying competitive padel matches.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </section>
+            <div className='mx-auto mt-36 sm:px-6 lg:pr-8 h-full'>
+                <img src={Img3} alt="Logo" className="rounded-lg z-0 relative h-[400px] w-[395px] object-cover"/>
+                <div className="flex mt-5">
+                    <h1 className='text-[20px] z-10 mt-2 mr-3 font-normal border border-spacing-10 h-[31px] border-[#E1FFA0] rounded-full w-[31px] text-[#E1FFA0] text-center'>3</h1>
+                    <div>
+                        <h1 className='text-[30px] font-normal text-[#E1FFA0] text-left'>Join a league</h1>
+                        <p className='text-[16px] font-manrope text-left font-normal text-[#FFFFFF] mt-2'>Build meaningful professional relationships 
+                            <br/>while enjoying competitive padel matches.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     )
 }
 
