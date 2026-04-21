@@ -11,7 +11,7 @@ const About = () => {
     <>
       <section
         id="about"
-        className="bg-white w-full mx-auto py-16 relative z-0"
+        className="bg-white w-full py-16 relative z-0"
       >
         <div
           className="mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl"
