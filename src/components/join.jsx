@@ -15,7 +15,7 @@ function Join() {
                     from expanding<br /> 
                     your network
                 </h2>
-                <img src={vector} className='sm:ml-[200px] sm:z-0 w-0 h-0 sm:w-[455px] sm:h-[547px]'></img>
+                <img src={vector} className='sm:ml-[250px] sm:z-0 w-0 h-0 sm:w-[455px] sm:h-[547px]'></img>
             </div>
             <div className="mx-auto mt-5 sm:px-6 lg:pr-8 pt-10 h-full">
                 <img src={Img1} alt="Logo" className="relative rounded-lg z-10 sm:h-[400px] mx-auto h-[300px] w-[300px] sm:w-[395px] object-cover"/>
