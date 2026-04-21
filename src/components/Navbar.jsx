@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Logo from "../assets/logo.png";
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const menuRef = useRef(null);
+
     const navItems = [
         "Tournament Overview",
         "League",
@@ -10,55 +12,93 @@ function Navbar() {
         "Become a Sponsor",
     ];
 
-    return (
-        <header className="fixed top-0 left-0 right-0 z-20 w-full bg-white/80 backdrop-blur-sm shadow-sm">
-            <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
-                <img src={Logo} alt="Logo" className="h-8 w-auto rounded-md bg-slate-500" />
+    // Close menu saat resize ke desktop
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 640) {
+                setIsOpen(false);
+            }
+        };
 
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    // Close menu saat klik di luar
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (menuRef.current && !menuRef.current.contains(e.target)) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
+    return (
+        <header
+            ref={menuRef}
+            className="fixed top-0 inset-x-0 z-50 overflow-x-hidden bg-white/80 backdrop-blur-md shadow-sm"
+        >
+            <div className="mx-auto flex items-center justify-between px-4 py-4 sm:px-6">
+                
+                {/* Logo */}
+                <img src={Logo} alt="Logo" className="h-8 w-auto" />
+
+                {/* Hamburger */}
                 <button
-                    type="button"
-                    className="inline-flex items-center justify-between rounded-full border border-slate-300 bg-white p-2 text-slate-700 hover:bg-slate-50 sm:hidden"
-                    onClick={() => setIsOpen((prev) => !prev)}
-                    aria-label="Toggle menu"
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="sm:hidden flex flex-col justify-center items-center w-10 h-10 gap-1"
                 >
-                    <span className="text-xl font-bold">{isOpen ? "×" : "☰"}</span>
+                    <span className={`block h-0.5 w-6 bg-black transition ${isOpen ? "rotate-45 translate-y-1.5" : ""}`}></span>
+                    <span className={`block h-0.5 w-6 bg-black transition ${isOpen ? "opacity-0" : ""}`}></span>
+                    <span className={`block h-0.5 w-6 bg-black transition ${isOpen ? "-rotate-45 -translate-y-1.5" : ""}`}></span>
                 </button>
 
-                <nav className="hidden flex-1 items-center justify-end space-x-6 sm:flex">
-                    <div className="flex flex-wrap items-center gap-4">
-                        {navItems.map((item, index) => (
-                            <a
-                                key={index}
-                                href="#"
-                                className="text-slate-800 text-xs font-medium uppercase tracking-[0.08em] transition duration-300 hover:text-green-500"
-                            >
-                                {item}
-                            </a>
-                        ))}
-                    </div>
+                {/* Desktop */}
+                <nav className="hidden sm:flex flex-1 justify-end items-center gap-6">
+                    {navItems.map((item, index) => (
+                        <a
+                            key={index}
+                            href="#"
+                            className="text-xs font-medium uppercase tracking-wider text-slate-700 hover:text-green-500 transition"
+                        >
+                            {item}
+                        </a>
+                    ))}
+
                     <a
                         href="#"
-                        className="rounded-full bg-[#174038] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#E1FFA0] transition duration-300 hover:bg-slate-900 hover:text-white"
+                        className="bg-[#174038] text-[#E1FFA0] px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-black hover:text-white transition"
                     >
                         Join Now
                     </a>
                 </nav>
             </div>
 
-            <div className={`${isOpen ? "block" : "hidden"} sm:hidden border-t border-slate-200 bg-white/95 px-4 py-4`}>
-                <div className="space-y-3">
+            {/* Mobile Menu */}
+            <div
+                className={`sm:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+                    isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                } bg-white border-t`}
+            >
+                <div className="flex flex-col gap-2 px-4 py-4">
                     {navItems.map((item, index) => (
                         <a
                             key={index}
                             href="#"
-                            className="block rounded-2xl px-4 py-3 text-sm font-medium text-slate-800 transition hover:bg-slate-100"
+                            onClick={() => setIsOpen(false)}
+                            className="block w-full px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 transition"
                         >
                             {item}
                         </a>
                     ))}
+
                     <a
                         href="#"
-                        className="block rounded-full bg-[#174038] px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.16em] text-[#E1FFA0] transition hover:bg-slate-900 hover:text-white"
+                        onClick={() => setIsOpen(false)}
+                        className="mt-2 block w-full text-center px-4 py-3 rounded-full bg-[#174038] text-[#E1FFA0] text-sm font-semibold uppercase tracking-wider hover:bg-black hover:text-white transition"
                     >
                         Join Now
                     </a>
