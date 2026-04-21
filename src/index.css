@@ -105,9 +105,21 @@ body {
 @media (max-width: 926px) {
   .safari-col-right {
     /* grid-column: 2; */
-    width: 23rem;
+    width: 100%;
 
     /* padding-left: 3rem; */
+  }
+}
+
+@media (max-width: 768px) {
+  .safari-content {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .safari-col-right {
+    width: 100%;
+    padding: 1rem 0 0;
   }
 }
 

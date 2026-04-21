@@ -23,10 +23,10 @@ function App() {
               <Hero />
               <About />
               <Join />
-              {/* <Testimoni /> */}
-              {/* <Questions /> */}
-              {/* <Footer /> */}
-              {/* <Footer2 /> */}
+              <Testimoni />
+              <Questions />
+              <Footer />
+              <Footer2 />
             </>
           } />
         </Routes>

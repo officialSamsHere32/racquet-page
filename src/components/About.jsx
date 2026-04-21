@@ -14,7 +14,7 @@ const About = () => {
         className="bg-white w-full py-16 relative z-0"
       >
         <div
-          className="mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-7xl"
+          className="mx-auto px-4 sm:px-6 md:px-8 lg:px-10 max-w-6xl"
         >
           {/* Safari-compatible grid structure */}
           <div className="safari-grid">
@@ -32,7 +32,7 @@ const About = () => {
               <div className="safari-content">
                 <div className="text-left mb-8 w-full">
                   {/* <div className=""> */}
-                  <h2 className="font-manrope  font-medium md:text-[42px] text-4xl  text-black mb-6">
+                  <h2 className="font-manrope font-medium md:text-[42px] text-4xl  text-black mb-6">
                     What is Racquet Connect?
                   </h2>
                   {/* max-w-full */}
