@@ -15,20 +15,20 @@ export const cardRContent = () => [
     nama: "Networking through sport",
     image: imageAbout1,
     objectPosition: "object-top", // ← Cuma yang ini aja
-    textTransform: "Connect with professionals...",
+    textTransform: "",
   },
   {
     id: "2",
     nama: "Inter company leagues",
     image: imageAbout2,
     objectPosition: "object-cover", // ← Tetap default
-    textTransform: "Connect with professionals...",
+    textTransform: "",
   },
   {
     id: "3",
     nama: "Competitive tournaments",
     image: imageAbout3,
     objectPosition: "object-cover", // ← Tetap default
-    textTransform: "Connect with professionals...",
+    textTransform: "",
   },
 ];

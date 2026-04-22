@@ -63,12 +63,12 @@ const About = () => {
                       alt=""
                       className={`w-full h-full object-cover ${
                         card.objectPosition || ""
-                      } transition-transform duration-300 group-hover:scale-110`}
+                      } transition-transform duration-300`}
                       loading="lazy"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-black opacity-20 group-hover:opacity-50 transition-opacity duration-300"></div>
-                  <div className="absolute inset-x-0 bottom-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 ease-in-out pointer-events-none">
+                  <div className="absolute inset-0 bg-black opacity-50 group-hover:opacity-50 transition-opacity" />
+                  <div className="absolute inset-x-0 bottom-0 p-6 text-white ">
                     <h3 className="text-2xl font-manrope mb-2">{card.nama}</h3>
                     <p className="text-sm font-manrope opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
                       {card.textTransform}
