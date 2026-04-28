@@ -1,17 +1,17 @@
 import { Logo, Logo2, Logo3, Logo4, Logo5 } from "../assets";
 
 const Hero = () => {
-  const logos = [Logo, Logo2, Logo3, Logo4, Logo5];
+  const logos = [Logo4, Logo2, Logo5, Logo, Logo3];
 
   return (
     <section className="bg-[#0D2420] w-full py-10 sm:py-14">
-      <div className="mx-auto flex max-w-6xl flex-col items-center px-4 sm:px-6">
+      <div className="flex flex-col w-full items-center">
         <h1 className="text-center text-[#FFFFFF] font-manrope font-semibold text-[24px]">
           As featured in
         </h1>
 
         <div className="mt-8 w-full overflow-hidden">
-          <div className="flex flex-wrap justify-center gap-8 sm:gap-12">
+          <div className="flex flex-wrap w-full justify-center md:gap-36 sm:gap-12 gap-5 sm:px-6">
             {logos.map((logo, index) => (
               <img
                 key={index}
