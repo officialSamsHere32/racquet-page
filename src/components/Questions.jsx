@@ -30,7 +30,7 @@ function Questions() {
                                 </h2>
                                 <button
                                     type="button"
-                                    className="h-10 w-10 rounded-full bg-[#174038] text-[22px] font-bold text-[#E1FFA0] transition hover:bg-slate-900"
+                                    className="flex items-center justify-center h-12 w-12 rounded-full bg-[#174038] text-[11px] font-bold text-[#E1FFA0] transition hover:bg-slate-900"
                                     onClick={() => toggleDropdown(index)}
                                     aria-label="Toggle menu"
                                 >

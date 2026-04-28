@@ -32,7 +32,7 @@ function Navbar() {
                             <a
                                 key={index}
                                 href="#"
-                                className="text-slate-800 text-xs font-medium uppercase tracking-[0.08em] transition duration-300 hover:text-green-500"
+                                className="text-slate-800 text-xs font-medium tracking-[0.08em] transition duration-300 hover:text-green-500"
                             >
                                 {item}
                             </a>
@@ -40,7 +40,7 @@ function Navbar() {
                     </div>
                     <a
                         href="#"
-                        className="rounded-full bg-[#174038] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#E1FFA0] transition duration-300 hover:bg-slate-900 hover:text-white"
+                        className="rounded-full bg-[#174038] px-4 py-2 text-[10px] font-semibold tracking-[0.16em] text-[#E1FFA0] transition duration-300 hover:bg-slate-900 hover:text-white"
                     >
                         Join Now
                     </a>
