@@ -11,7 +11,7 @@ const Hero = () => {
         </h1>
 
         <div className="mt-8 w-full overflow-hidden">
-          <div className="flex flex-wrap justify-center gap-8 sm:gap-12">
+          <div className="flex flex-wrap justify-center  gap-8 sm:gap-12">
             {logos.map((logo, index) => (
               <img
                 key={index}
