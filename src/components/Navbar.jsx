@@ -12,19 +12,19 @@ function Navbar() {
 
     return (
         <header className="fixed top-0 right-0 left-0 z-20 w-full bg-white/80 backdrop-blur-sm shadow-sm">
-            <div className="flex max-w-[1200px] items-center justify-between px-4 py-4 sm:px-6">
-                <img src={Logo} alt="Logo" className="sm:h-8 h-5 w-auto rounded-md bg-slate-500" />
+            <div className="flex max-w-[1440px] items-center justify-between px-4 py-4 md:px-6">
+                <img src={Logo} alt="Logo" className="md:h-8 h-5 w-auto rounded-md bg-slate-500" />
 
                 <button
                     type="button"
-                    className="inline-flex items-center justify-between rounded-full border border-slate-300 bg-white p-2 text-slate-700 hover:bg-slate-50 sm:hidden"
+                    className="inline-flex items-center justify-between rounded-full border border-slate-300 bg-white p-2 text-slate-700 hover:bg-slate-50 md:hidden"
                     onClick={() => setIsOpen((prev) => !prev)}
                     aria-label="Toggle menu"
                 >
                     <span className="text-xl font-bold">{isOpen ? "×" : "☰"}</span>
                 </button>
 
-                <nav className="hidden flex-1 items-center justify-end space-x-6 sm:flex">
+                <nav className="hidden flex-1 items-center justify-end space-x-6 md:flex">
                     <div className="flex flex-wrap items-center gap-4">
                         {navItems.map((item, index) => (
                             <a
@@ -45,7 +45,7 @@ function Navbar() {
                 </nav>
             </div>
 
-            <div className={`${isOpen ? "block" : "hidden"} sm:hidden border-t border-slate-200 bg-white/95 px-4 py-4`}>
+            <div className={`${isOpen ? "block" : "hidden"} md:hidden border-t border-slate-200 bg-white/95 px-4 py-4`}>
                 <div className="space-y-3">
                     {navItems.map((item, index) => (
                         <a
