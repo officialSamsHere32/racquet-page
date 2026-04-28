@@ -12,7 +12,7 @@ function Navbar() {
 
     return (
         <header className="fixed top-0 right-0 left-0 z-20 w-full bg-white/80 backdrop-blur-sm shadow-sm">
-            <div className="flex max-w-[1440px] items-center justify-between px-4 py-4 md:px-6">
+            <div className="flex max-w-[2800px] items-center justify-between px-4 py-4 md:px-6">
                 <img src={Logo} alt="Logo" className="md:h-8 h-5 w-auto rounded-md bg-slate-500" />
 
                 <button

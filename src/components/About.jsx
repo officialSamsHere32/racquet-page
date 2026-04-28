@@ -21,7 +21,7 @@ const About = () => {
             {/* Left column - ABOUT US */}
             <div className="safari-col-left">
               <div className="mt-12 flex items-start">
-                <div className="text-black font-manrope text-sm tracking-wider whitespace-nowrap bg-act  rounded-full px-3 py-1">
+                <div className="text-black font-manrope text-sm tracking-wider whitespace-nowrap bg-act rounded-full px-3 py-1">
                   ABOUT US
                 </div>
               </div>
