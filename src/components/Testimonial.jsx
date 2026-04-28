@@ -35,7 +35,7 @@ function Testimoni() {
                 </h2>
             </div>
 
-            <div className="mx-auto mt-12 grid gap-8 px-2 sm:px-0 sm:grid-cols-1 lg:grid-cols-3">
+            <div className="mx-auto mt-12 max-w-6xl grid gap-8 px-2 sm:px-0 sm:grid-cols-1 lg:grid-cols-3">
                 {testimonials.map((item) => (
                     <div key={item.id} className={`rounded-3xl bg-[#0D2420] h-[428px] text-white shadow-xl shadow-black/10 transition-transform duration-300 hover:-translate-y-1 ${item.id === 2 ? 'lg:mt-8' : 'h-[478px]]'}`} >
                         <img src={item.image} alt={item.author} className="mx-auto mb-6 h-[250px] w-full rounded-3xl object-cover" />
