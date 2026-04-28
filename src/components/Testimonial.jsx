@@ -35,14 +35,14 @@ function Testimoni() {
                 </h2>
             </div>
 
-            <div className="mx-auto mt-12 grid gap-8 px-2 sm:px-0 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto mt-12 grid gap-8 px-2 sm:px-0 sm:grid-cols-1 lg:grid-cols-3">
                 {testimonials.map((item) => (
-                    <div key={item.id} className="rounded-3xl bg-[#0D2420] p-6 text-white shadow-xl shadow-black/10 transition-transform duration-300 hover:-translate-y-1">
+                    <div key={item.id} className={`rounded-3xl bg-[#0D2420] h-[428px] text-white shadow-xl shadow-black/10 transition-transform duration-300 hover:-translate-y-1 ${item.id === 2 ? 'lg:mt-8' : 'h-[478px]]'}`} >
                         <img src={item.image} alt={item.author} className="mx-auto mb-6 h-[250px] w-full rounded-3xl object-cover" />
-                        <p className="text-base leading-8 text-white">
+                        <p className="text-base leading-8 px-4 font-manrope text-white">
                             “{item.quote}”
                         </p>
-                        <h3 className="mt-6 text-sm font-semibold text-[#9FA8A6]">
+                        <h3 className={`mt-2 p-8 text-sm font-semibold text-[#9FA8A6] ${item.id === 1 ? 'py-4' : ''}`}>
                             {item.author}
                         </h3>
                     </div>
